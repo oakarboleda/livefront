@@ -1,11 +1,12 @@
 'use client'
 
 import { FC } from 'react'
+import Image from 'next/image'
 
 const HeroImage: FC = () => {
   return (
     <div className="">
-      <img src="./avatar.png" alt="hero" />
+      <Image src="/hero.png" alt="Hero" width={300} height={300} />
     </div>
   )
 }
