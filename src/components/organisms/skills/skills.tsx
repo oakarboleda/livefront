@@ -21,15 +21,15 @@ export type SkillsProps = {
 export default function Skills({}: SkillsProps) {
   const [spells, setSpells] = useState<Spell[]>([])
   useEffect(() => {
-    getAllSpells().then(fetchedSpells => {
+    getAllSpells().then((fetchedSpells) => {
       const shuffledSpells = fetchedSpells.sort(() => 0.5 - Math.random())
       setSpells(shuffledSpells.slice(0, 7))
     })
   }, [])
   return (
-    <div className='flex w-2/4 gap-8 flex-wrap justify-center h-screen py-10'>
-      {spells.length === 0 && <span className='loading'>Loading...</span>}
-      {spells.map(spell => (
+    <div className="flex w-2/4 gap-8 flex-wrap justify-center h-screen py-10">
+      {spells.length === 0 && <span className="loading">Loading...</span>}
+      {spells.map((spell) => (
         <SkillCard key={spell.index} spell={spell} />
       ))}
     </div>

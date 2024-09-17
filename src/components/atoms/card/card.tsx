@@ -13,9 +13,14 @@ const SkillCard: React.FC<CardProps> = ({ spell }) => {
   }
 
   return (
-    <div className='transform rounded-xl sm:h-2/4 sm:w-64'>
-      <div className={`card-container p-4 lg:w-full lg:h-full md:w-1/4 sm:w-1/2 w-full' ${flipped ? ' flipped' : ''}`}>
-        <div className='front flex h-full justify-center items-center' onClick={() => setFlipped(!flipped)}>
+    <div className="transform rounded-xl sm:h-2/4 sm:w-64">
+      <div
+        className={`card-container p-4 lg:w-full lg:h-full md:w-1/4 sm:w-1/2 w-full' ${flipped ? ' flipped' : ''}`}
+      >
+        <div
+          className="front flex h-full justify-center items-center"
+          onClick={() => setFlipped(!flipped)}
+        >
           <p>{spell.name}</p>
           <small>
             {spell.level > 0 && `Level ${spell.level} `}
@@ -23,7 +28,10 @@ const SkillCard: React.FC<CardProps> = ({ spell }) => {
             {spell.level === 0 && ' cantrip'}
           </small>
         </div>
-        <div className='back flex h-full justify-center items-center' onClick={() => setFlipped(!flipped)}>
+        <div
+          className="back flex h-full justify-center items-center"
+          onClick={() => setFlipped(!flipped)}
+        >
           <p>
             <strong>Casting Time</strong>
             {spell.casting_time}

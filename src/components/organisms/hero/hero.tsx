@@ -1,13 +1,13 @@
 import React, { FC, useEffect } from 'react'
 
-import BackgroundImage from '@/components/atoms/background/background'
-import Avatar from '@/components/atoms/avatar/avatar'
+import HeroImage from '../../atoms/avatar/avatar'
+import BackgroundImage from '../../atoms/background/background'
 
 const Hero: FC = () => {
   return (
-    <section className='hero'>
+    <section className="hero">
       <BackgroundImage />
-      <Avatar />
+      <HeroImage />
     </section>
   )
 }
