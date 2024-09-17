@@ -1,9 +1,31 @@
-import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Button from './button'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Button',
-  component: Button
+  component: Button,
+  args: {
+    intent: 'primary',
+    underline: false,
+    children: 'Button',
+    size: 'lg',
+  },
+  argTypes: {
+    intent: {
+      options: ['primary', 'secondary'],
+      control: { type: 'select' },
+    },
+    size: {
+      options: ['sm', 'lg'],
+      control: { type: 'select' },
+    },
+  },
 }
 
-export const Default = () => <Button />
+type Story = StoryObj<typeof Button>
+
+export const Default: Story = {
+  render: (args) => <Button {...args} />,
+}
+
+export default meta
