@@ -1,1 +1,3 @@
-export * from './CardCustom';
+import { CardCustom } from './CardCustom'
+
+export default CardCustom
