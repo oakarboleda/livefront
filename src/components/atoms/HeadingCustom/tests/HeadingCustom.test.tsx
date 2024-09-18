@@ -1,5 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import {HeadingCustom} from '../HeadingCustom';
+import { HeadingCustom } from '../HeadingCustom'
+import { render } from '@testing-library/react'
 
-describe('<HeadingCustom />', () => {});
+describe('<HeadingCustom />', () => {
+  it('renders without crashing', () => {
+    render(<HeadingCustom />)
+  })
+})

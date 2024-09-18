@@ -4,6 +4,7 @@ import styles from './BackgroundImage.module.css'
 
 export interface backgroundImageProps {
   prop?: string
+  alt?: string
 }
 
 export function BackgroundImage({ prop = 'default value' }: backgroundImageProps) {

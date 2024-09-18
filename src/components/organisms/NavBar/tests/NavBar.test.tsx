@@ -1,5 +1,10 @@
-import React from 'react';
+import React from 'react'
+import { NavBar } from '../NavBar'
+import { render } from '@testing-library/react'
 
-import {NavBar} from '../NavBar';
-
-describe('<NavBar />', () => {});
+describe('<NavBar />', () => {
+  it('renders without crashing', () => {
+    const container = document.createElement('div')
+    render(<NavBar />)
+  })
+})

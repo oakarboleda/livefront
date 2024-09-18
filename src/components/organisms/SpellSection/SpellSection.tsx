@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { SpellCard } from '@/components/molecules/SpellCard/SpellCard'
-import { getAllSpells } from '@/api/api'
+import { getAllSpells } from '@/api/api' // Assuming getAllSpells is imported from an api file
 
-export type Spell = {
+interface Spell {
   index: string
   name: string
   level: number
@@ -14,25 +14,29 @@ export type Spell = {
   components: string[]
   duration: string
 }
-export type spellsProps = {
-  spells?: Spell[]
+
+interface SpellsProps {
+  spell?: Spell[]
 }
 
-export default function SpellSection({}: spellsProps) {
+export default function SpellSection({}: SpellsProps) {
   const [spells, setSpells] = useState<Spell[]>([])
 
   useEffect(() => {
-    getAllSpells().then((fetchedSpells) => {
-      const shuffledSpells = fetchedSpells.sort(() => 0.5 - Math.random())
-      setSpells(shuffledSpells.slice(0, 7))
-    })
+    getAllSpells()
+      .then((fetchedSpells) => {
+        setSpells(fetchedSpells)
+      })
+      .catch((error) => {
+        console.error('Error fetching spells:', error)
+      })
   }, [])
 
   return (
     <div className="flex w-2/4 gap-8 flex-wrap justify-center h-screen py-10">
       {spells.length === 0 && <span className="loading">Loading...</span>}
-      {spells.map((spell) => (
-        <SpellCard key={spell.index} />
+      {spells.map((spell, index) => (
+        <SpellCard key={spell.index} spell={spell} />
       ))}
     </div>
   )
