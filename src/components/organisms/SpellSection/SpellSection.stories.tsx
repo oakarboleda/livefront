@@ -1,9 +1,9 @@
 import React from 'react'
-import Spells, { SpellsProps } from './SpellSection'
+import SpellSection, { spellsProps } from './SpellSection'
 
 export default {
-  title: 'Spells',
-  component: Spells,
+  title: 'SpellSection',
+  component: SpellSection,
 }
 
-export const Default = ({ spells }: SpellsProps) => <Spells spells={spells} />
+export const Default = ({ spell }: spellsProps) => <SpellSection spell={spell} />

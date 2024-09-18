@@ -15,11 +15,11 @@ interface Spell {
   duration: string
 }
 
-interface SpellsProps {
+export interface spellsProps {
   spell?: Spell[]
 }
 
-export default function SpellSection({}: SpellsProps) {
+export default function SpellSection({ spell }: spellsProps) {
   const [spells, setSpells] = useState<Spell[]>([])
 
   useEffect(() => {
