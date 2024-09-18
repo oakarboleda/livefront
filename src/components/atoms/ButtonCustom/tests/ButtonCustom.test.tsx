@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonCustom } from '../ButtonCustom'
+import ButtonCustom from '../ButtonCustom'
 import { render } from '@testing-library/react'
 
 describe('<ButtonCustom />', () => {
