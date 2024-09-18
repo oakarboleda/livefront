@@ -1,64 +1,68 @@
+'use client'
 import React, { useEffect, useState } from 'react'
-import styles from './SpellCard.module.css'
-import { CardCustom } from '@/components/atoms/CardCustom'
-import { getAllSpells } from '@/api/api'
+import './SpellCard.module.css'
+import CardCustom from '@/components/atoms/CardCustom'
+import { Spell } from '@/types/spell'
+import ButtonCustom from '@/components/atoms/ButtonCustom/ButtonCustom'
+import { useRouter } from 'next/navigation'
 
-export type Spell = {
-  index: string
-  name: string
-  level: number
-  school: {
-    name: string
-  }
-  casting_time: string
-  range: string
-  components: string[]
-  duration: string
-}
-export type spellsProps = {
-  spells?: Spell[]
-}
-export interface spellCardProps {
-  spells?: Spell[]
-  index?: string
-  spell?: Spell
+interface SpellCardProps {
+  spell: Spell
 }
 
-export function SpellCard({}: spellCardProps) {
-  const [spells, setSpells] = useState<Spell[]>([])
+const SpellCard: React.FC<SpellCardProps> = ({ spell }) => {
+  const [flipped, setFlipped] = useState(false)
+  const router = useRouter()
+
   useEffect(() => {
-    getAllSpells().then((fetchedSpells) => {
-      const shuffledSpells = fetchedSpells.sort(() => 0.5 - Math.random())
-      setSpells(shuffledSpells.slice(0, 7))
-    })
-  }, [])
+    setFlipped(false)
+  }, [spell])
+
+  const handleOnClick = () => {
+    router.push(`/spell/${spell.index}`)
+  }
+
   return (
-    <CardCustom>
-      <div className={styles.spellCard}>
-        {spells.map((spell) => (
-          <div key={spell.index} className={styles.spell}>
+    <CardCustom size="small" onClick={() => setFlipped(!flipped)}>
+      <div className={`card-container mx-3 ${flipped ? ' flipped' : ''}`}>
+        <div className="cardInner">
+          <div
+            className="front flex h-full justify-center items-center"
+            onClick={() => setFlipped(!flipped)}
+          >
             <h2>{spell.name}</h2>
-            <div>
-              <strong>Level:</strong> {spell.level}
-            </div>
-            <div>
-              <strong>School:</strong> {spell.school.name}
-            </div>
-            <div>
-              <strong>Casting Time:</strong> {spell.casting_time}
-            </div>
-            <div>
-              <strong>Range:</strong> {spell.range}
-            </div>
-            <div>
-              <strong>Components:</strong> {spell.components.join(', ')}
-            </div>
-            <div>
-              <strong>Duration:</strong> {spell.duration}
-            </div>
+            <small>
+              {spell.level > 0 && `Level ${spell.level} `}
+              {spell.school.name}
+              {spell.level === 0 && ' cantrip'}
+            </small>
           </div>
-        ))}
+          <div
+            className="back flex h-full justify-center items-center"
+            onClick={() => setFlipped(!flipped)}
+          >
+            <div>
+              <p>
+                <strong>Casting Time:</strong> {spell.casting_time}
+              </p>
+              <p>
+                <strong>Range:</strong> {spell.range}
+              </p>
+              <p>
+                <strong>Components:</strong> {spell.components.join(', ')}
+              </p>
+              <p>
+                <strong>Duration:</strong> {spell.duration}
+              </p>
+            </div>
+            <ButtonCustom variant="primary" onClick={handleOnClick}>
+              Learn more
+            </ButtonCustom>
+          </div>
+        </div>
       </div>
     </CardCustom>
   )
 }
+
+export default SpellCard

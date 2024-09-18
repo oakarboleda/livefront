@@ -6,4 +6,4 @@ export default {
   component: SpellSection,
 }
 
-export const Default = ({ spell }: spellsProps) => <SpellSection spell={spell} />
+export const Default = ({ spells }: spellsProps) => <SpellSection spells={spells} />

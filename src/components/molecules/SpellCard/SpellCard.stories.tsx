@@ -1,14 +1,14 @@
-import React from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import {SpellCard} from './SpellCard';
+import SpellCard from './SpellCard'
 
 const meta: Meta<typeof SpellCard> = {
   component: SpellCard,
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof SpellCard>;
+type Story = StoryObj<typeof SpellCard>
 
-export const Basic: Story = {args: {}};
+export const Basic: Story = { args: {} }

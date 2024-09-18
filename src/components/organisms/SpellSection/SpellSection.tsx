@@ -1,43 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { SpellCard } from '@/components/molecules/SpellCard/SpellCard'
-import { getAllSpells } from '@/api/api' // Assuming getAllSpells is imported from an api file
-
-interface Spell {
-  index: string
-  name: string
-  level: number
-  school: {
-    name: string
-  }
-  casting_time: string
-  range: string
-  components: string[]
-  duration: string
-}
+import SpellCard from '@/components/molecules/SpellCard/SpellCard'
+import { Spell } from '@/types/spell'
+import { getAllSpells } from '@/api/api'
 
 export interface spellsProps {
-  spell?: Spell[]
+  spells?: Spell[]
 }
 
-export default function SpellSection({ spell }: spellsProps) {
-  const [spells, setSpells] = useState<Spell[]>([])
+const SpellSection: React.FC<spellsProps> = ({ spells }) => {
+  const [spell, setSpell] = useState<Spell[]>([])
 
   useEffect(() => {
-    getAllSpells()
-      .then((fetchedSpells) => {
-        setSpells(fetchedSpells)
-      })
-      .catch((error) => {
-        console.error('Error fetching spells:', error)
-      })
+    const savedSpells = localStorage.getItem('spells')
+    if (savedSpells) setSpell(JSON.parse(savedSpells))
+    getAllSpells().then((fetchedSpells) => {
+      setSpell(fetchedSpells)
+      localStorage.setItem('spells', JSON.stringify(fetchedSpells))
+    })
   }, [])
 
   return (
-    <div className="flex w-2/4 gap-8 flex-wrap justify-center h-screen py-10">
-      {spells.length === 0 && <span className="loading">Loading...</span>}
-      {spells.map((spell, index) => (
-        <SpellCard key={spell.index} spell={spell} />
+    <div className="grid grid-cols-5 gap-8 py-7">
+      {spell.map((spell) => (
+        <SpellCard key={spell.index} spell={spell}></SpellCard>
       ))}
     </div>
   )
 }
+
+export default SpellSection
