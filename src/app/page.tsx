@@ -9,8 +9,8 @@ export default function Home() {
       <section className="">
         <HeroSection />
       </section>
-      <section className="">
-        <SpellSection />
+      <section className="h-screen flex items-center justify-center">
+        <SpellSection spells={[]} />
       </section>
     </>
   )
