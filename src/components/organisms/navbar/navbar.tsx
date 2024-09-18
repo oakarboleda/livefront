@@ -6,6 +6,6 @@ export interface navBarProps {
   prop?: string
 }
 
-export function NavBar({ prop = 'default value' }: navBarProps) {
+export function NavBar({ prop }: navBarProps) {
   return <div className={styles.NavBar}>NavBar {prop}</div>
 }
