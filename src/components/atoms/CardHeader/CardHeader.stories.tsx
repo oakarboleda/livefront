@@ -1,9 +1,9 @@
-import React from 'react';
-import Cardheader, { CardheaderProps } from './CardHeader';
+import React from 'react'
+import Cardheader from './CardHeader'
 
 export default {
-    title: "Cardheader",
-    component: Cardheader
-};
+  title: 'Cardheader',
+  component: Cardheader,
+}
 
-export const Default = (props: CardheaderProps) => <Cardheader {...props} />;
+export const Default = () => <Cardheader />
