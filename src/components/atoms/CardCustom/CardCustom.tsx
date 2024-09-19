@@ -7,6 +7,8 @@ export interface cardCustomProps {
   children?: React.ReactNode
   className?: string
   style?: React.CSSProperties
+  title?: string
+  imgSrc?: string
 }
 
 export const CardCustom: React.FC<cardCustomProps> = ({
@@ -21,7 +23,7 @@ export const CardCustom: React.FC<cardCustomProps> = ({
 
   return (
     <div
-      className={`card-container p-4 lg:w-full lg:h-full md:w-1/4 sm:w-1/2 w-full ${sizeClass} ${className}`}
+      className={`flex overflow-hidden flex-col rounded-xl max-w-[310px] ${sizeClass} ${className}`}
       onClick={onClick}
       style={style}
     >

@@ -6,10 +6,10 @@ import SpellSection from '@/components/organisms/SpellSection/SpellSection'
 export default function Home() {
   return (
     <>
-      <section className="">
+      <section className="h-1/4 w-full py-6">
         <HeroSection />
       </section>
-      <section className="h-screen flex items-center justify-center">
+      <section className="h-screen flex items-center justify-center my-14">
         <SpellSection spells={[]} />
       </section>
     </>

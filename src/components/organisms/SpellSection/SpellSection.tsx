@@ -20,7 +20,7 @@ const SpellSection: React.FC<spellsProps> = ({ spells }) => {
   }, [])
 
   return (
-    <div className="grid grid-cols-5 gap-8 py-7">
+    <div className="grid grid-cols-5 gap-8 py-7 px-4">
       {spell.map((spell) => (
         <SpellCard key={spell.index} spell={spell}></SpellCard>
       ))}

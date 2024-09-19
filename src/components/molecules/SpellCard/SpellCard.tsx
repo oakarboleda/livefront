@@ -1,17 +1,22 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import './SpellCard.module.css'
 import { CardCustom } from '@/components/atoms/CardCustom'
 import { Spell } from '@/types/spell'
 import ButtonCustom from '@/components/atoms/ButtonCustom/ButtonCustom'
 import { useRouter } from 'next/navigation'
+import CardHeader from '@/components/atoms/CardHeader/CardHeader'
+import CardContent from '@/components/atoms/CardContent/CardContent'
 
-interface SpellCardProps {
+interface spellCardProps {
   spell: Spell
+  className?: string
+  onClick?: () => void
+  style?: React.CSSProperties
 }
 
-const SpellCard: React.FC<SpellCardProps> = ({ spell }) => {
+const SpellCard: React.FC<spellCardProps> = ({ spell }) => {
   const [flipped, setFlipped] = useState(false)
+
   const router = useRouter()
 
   useEffect(() => {
@@ -23,45 +28,46 @@ const SpellCard: React.FC<SpellCardProps> = ({ spell }) => {
   }
 
   return (
-    <CardCustom size="small" onClick={() => setFlipped(!flipped)}>
-      <div className={`card-container mx-3 ${flipped ? ' flipped' : ''}`}>
-        <div className="cardInner">
-          <div
-            className="front flex h-full justify-center items-center"
-            onClick={() => setFlipped(!flipped)}
-          >
-            <h2>{spell.name}</h2>
-            <small>
-              {spell.level > 0 && `Level ${spell.level} `}
-              {spell.school.name}
-              {spell.level === 0 && ' cantrip'}
-            </small>
+    <>
+      <CardCustom size="medium" onClick={() => setFlipped(!flipped)}>
+        <div
+          className={`card-container ${flipped ? 'flipped' : ''}`}
+          onClick={() => setFlipped(!flipped)}
+        >
+          <div className="front" onClick={() => setFlipped(!flipped)}>
+            <CardHeader>{spell.name}</CardHeader>
+            <CardContent>
+              <small>
+                <p>{spell.level > 0 && `Level ${spell.level} `}</p>
+                <p>{spell.school.name}</p>
+                <p> {spell.level === 0 && ' cantrip'}</p>
+              </small>
+            </CardContent>
           </div>
-          <div
-            className="back flex h-full justify-center items-center"
-            onClick={() => setFlipped(!flipped)}
-          >
-            <div>
+
+          <div className={`back ${flipped ? 'flipped' : ''}`}>
+            <CardContent>
               <p>
-                <strong>Casting Time:</strong> {spell.casting_time}
+                <strong>Casting Time:</strong> {spell?.casting_time}
               </p>
               <p>
-                <strong>Range:</strong> {spell.range}
+                <strong>Range:</strong> {spell?.range}
               </p>
               <p>
-                <strong>Components:</strong> {spell.components.join(', ')}
+                <strong>Components:</strong> {spell?.components.join(', ')}
               </p>
               <p>
-                <strong>Duration:</strong> {spell.duration}
+                <strong>Duration:</strong> {spell?.duration}
               </p>
-            </div>
-            <ButtonCustom variant="primary" onClick={handleOnClick}>
-              Learn more
-            </ButtonCustom>
+
+              <ButtonCustom variant="primary" onClick={handleOnClick}>
+                Learn more
+              </ButtonCustom>
+            </CardContent>
           </div>
         </div>
-      </div>
-    </CardCustom>
+      </CardCustom>
+    </>
   )
 }
 
