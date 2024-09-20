@@ -1,9 +1,14 @@
 import React from 'react'
-import Cardcontent from './CardContent'
+import type { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  title: 'Cardcontent',
-  component: Cardcontent,
+import { CardContent } from './CardContent'
+
+const meta: Meta<typeof CardContent> = {
+  component: CardContent,
 }
 
-export const Default = () => <Cardcontent />
+export default meta
+
+type Story = StoryObj<typeof CardContent>
+
+export const Basic: Story = { args: {} }
