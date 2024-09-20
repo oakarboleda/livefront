@@ -5,14 +5,13 @@ export interface cardCustomProps {
   onClick?: () => void
   children?: React.ReactNode
   className?: string
-  style?: React.CSSProperties
+
   title?: string
   imgSrc?: string
 }
 
 export const CardCustom: React.FC<cardCustomProps> = ({
-  size,
-  style,
+  size = 'medium', // Default size
   className,
   onClick,
   children,
@@ -26,11 +25,7 @@ export const CardCustom: React.FC<cardCustomProps> = ({
         : 'w-80 h-96' // default medium size (example: 20rem x 24rem)
 
   return (
-    <div
-      className={`flex overflow-hidden flex-col rounded-xl max-w-[310px] ${sizeClass} ${className}`}
-      onClick={onClick}
-      style={style}
-    >
+    <div className={`flex p-8 flex-col ${sizeClass} ${className}`} onClick={onClick}>
       {children}
     </div>
   )

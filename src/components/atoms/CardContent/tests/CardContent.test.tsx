@@ -16,7 +16,6 @@ describe('<CardCustom />', () => {
     duration: 'duration',
   }
   it('renders without crashing', async () => {
-    const container = document.createElement('div')
     render(<CardContent spell={spell} />)
   })
 })
