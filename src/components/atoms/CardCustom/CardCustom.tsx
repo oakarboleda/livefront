@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './CardCustom.module.css'
 
 export interface cardCustomProps {
   size?: 'small' | 'medium' | 'large'
@@ -12,15 +11,19 @@ export interface cardCustomProps {
 }
 
 export const CardCustom: React.FC<cardCustomProps> = ({
-  size,
+  size = 'medium', // Default size
   style,
   className,
   onClick,
   children,
 }) => {
+  // Map size prop to Tailwind classes
   const sizeClass =
-    size === 'small' ? styles.small : size === 'large' ? styles.large : styles.medium
-
+    size === 'small'
+      ? 'w-64 h-80' // small size equivalent (example: 16rem x 20rem)
+      : size === 'large'
+        ? 'w-96 h-112' // large size equivalent (example: 24rem x 28rem)
+        : 'w-80 h-96' // default medium size (example: 20rem x 24rem)
   return (
     <div
       className={`flex overflow-hidden flex-col rounded-xl max-w-[310px] ${sizeClass} ${className}`}
