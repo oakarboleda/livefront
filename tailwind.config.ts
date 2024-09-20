@@ -8,23 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      keyframes: {
-        flip: {
-          '0%': { transform: 'rotateY(0deg)' },
-          '100%': { transform: 'rotateY(180deg)' },
-        },
-        unflip: {
-          '0%': { transform: 'rotateY(180deg)' },
-          '100%': { transform: 'rotateY(0deg)' },
-        },
-      },
-      animation: {
-        flip: 'flip 0.5s ease-in-out forwards',
-        unflip: 'unflip 0.5s ease-in-out forwards',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
   plugins: [],
 }
-
 export default config

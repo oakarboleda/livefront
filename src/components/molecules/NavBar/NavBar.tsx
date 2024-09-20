@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NavBar: React.FC = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,3 +47,5 @@ export const NavBar: React.FC = () => {
     </nav>
   )
 }
+
+export default Navbar

@@ -1,7 +1,7 @@
 // components/HeroSection.tsx
 import React from 'react'
 
-export const HeroSection: React.FC = () => {
+const HeroSection: React.FC = () => {
   return (
     <section className="flex flex-col-reverse md:flex-row items-center justify-between p-8 min-h-screen">
       {/* Left Column: Text Content */}
@@ -22,3 +22,5 @@ export const HeroSection: React.FC = () => {
     </section>
   )
 }
+
+export default HeroSection
