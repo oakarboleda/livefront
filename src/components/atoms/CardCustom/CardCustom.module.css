@@ -1,0 +1,17 @@
+
+.small {
+    width: 20vw;
+    height: 20vh;
+}
+
+.medium {
+    width: 50vw;
+    height: 50vh;
+}
+
+.large {
+    width: 100vw;
+    height: 100vh;
+}
+
+

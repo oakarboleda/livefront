@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import './globals.scss'
 
+import { AnimatePresence } from 'framer-motion'
 import React from 'react'
 import Navbar from '@/components/molecules/NavBar/NavBar'
 import Footer from '@/components/molecules/Footer/Footer'
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <AnimatePresence>
+          <Navbar />
+          {children}
+          <Footer />
+        </AnimatePresence>
       </body>
     </html>
   )

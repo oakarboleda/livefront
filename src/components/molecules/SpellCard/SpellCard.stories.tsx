@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { SpellCard } from './SpellCard'
+import SpellCard from './SpellCard'
 
 const meta: Meta<typeof SpellCard> = {
   component: SpellCard,
