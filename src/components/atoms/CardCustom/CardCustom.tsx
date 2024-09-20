@@ -25,7 +25,7 @@ export const CardCustom: React.FC<cardCustomProps> = ({
         : 'w-80 h-96' // default medium size (example: 20rem x 24rem)
 
   return (
-    <div className={`flex rounded-lg  p-8 flex-col ${sizeClass} ${className}`} onClick={onClick}>
+    <div className={`flex p-8 flex-col ${sizeClass} ${className}`} onClick={onClick}>
       {children}
     </div>
   )

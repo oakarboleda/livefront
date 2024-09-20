@@ -56,11 +56,8 @@ export const SpellCard: React.FC<SpellCardProps> = ({ spell, children }) => {
           <CardHeader>{spell.name}</CardHeader>
           <CardContent side="front">
             {/* Customize layout for front side */}
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              <h2 className="text-xl font-bold">Spell Name: {spell.name}</h2>
-              <p>{spell.level > 0 ? `Level ${spell.level}` : 'Cantrip'}</p>
-              <p>{spell.school.name}</p>
-            </div>
+            <p>{spell.level > 0 ? `Level ${spell.level}` : 'Cantrip'}</p>
+            <p>{spell.school.name}</p>
           </CardContent>
         </div>
 
