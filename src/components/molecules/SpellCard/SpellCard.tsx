@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { CardCustom } from '@/components/atoms/CardCustom'
+import { CardCustom } from '@/components/atoms/CardCustom/CardCustom'
 import { Spell } from '@/types/spell'
 import { useRouter } from 'next/navigation'
 import { CardHeader } from '@/components/atoms/CardHeader/CardHeader'
