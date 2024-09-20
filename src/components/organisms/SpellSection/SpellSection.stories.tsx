@@ -1,9 +1,14 @@
 import React from 'react'
-import SpellSection, { spellsProps } from './SpellSection'
+import type { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  title: 'SpellSection',
+import { SpellSection } from './SpellSection'
+
+const meta: Meta<typeof SpellSection> = {
   component: SpellSection,
 }
 
-export const Default = ({ spells }: spellsProps) => <SpellSection spells={spells} />
+export default meta
+
+type Story = StoryObj<typeof SpellSection>
+
+export const Basic: Story = { args: {} }
