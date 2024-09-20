@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { CardCustom } from '@/components/atoms/CardCustom/CardCustom'
 import { Spell } from '@/types/spell'
-import ButtonCustom from '@/components/atoms/ButtonCustom/ButtonCustom'
 import { useRouter } from 'next/navigation'
 import { CardHeader } from '@/components/atoms/CardHeader/CardHeader'
 import { CardContent } from '@/components/atoms/CardContent/CardContent'
