@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from 'react'
 import { CardCustom } from '@/components/atoms/CardCustom'
 import { Spell } from '@/types/spell'
-import ButtonCustom from '@/components/atoms/ButtonCustom/ButtonCustom'
 import { useRouter } from 'next/navigation'
-import CardHeader from '@/components/atoms/CardHeader/CardHeader'
-import CardContent from '@/components/atoms/CardContent/CardContent'
+import { CardHeader } from '@/components/atoms/CardHeader/CardHeader'
+import { CardContent } from '@/components/atoms/CardContent/CardContent'
+import { ButtonCustom } from '@/components/atoms/ButtonCustom/ButtonCustom'
 
 interface spellCardProps {
   spell: Spell

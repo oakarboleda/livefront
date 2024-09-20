@@ -7,7 +7,7 @@ export interface spellsProps {
   spells?: Spell[]
 }
 
-const SpellSection: React.FC<spellsProps> = ({ spells }) => {
+export const SpellSection: React.FC<spellsProps> = ({ spells }) => {
   const [spell, setSpell] = useState<Spell[]>([])
 
   useEffect(() => {
@@ -32,5 +32,3 @@ const SpellSection: React.FC<spellsProps> = ({ spells }) => {
     </section>
   )
 }
-
-export default SpellSection

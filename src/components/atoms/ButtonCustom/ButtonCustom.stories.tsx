@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import ButtonCustom from './ButtonCustom'
+import { ButtonCustom } from './ButtonCustom'
 
 const meta: Meta<typeof ButtonCustom> = {
   component: ButtonCustom,

@@ -1,6 +1,5 @@
 import React from 'react'
 import clsx from 'clsx'
-import styles from './ButtonCustom.module.css'
 
 export type buttonCustomProps = {
   variant?: 'primary' | 'secondary' | 'danger'
@@ -9,7 +8,7 @@ export type buttonCustomProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const ButtonCustom: React.FC<buttonCustomProps> = ({
+export const ButtonCustom: React.FC<buttonCustomProps> = ({
   variant = 'primary',
   size = 'medium',
   children,
@@ -42,5 +41,3 @@ const ButtonCustom: React.FC<buttonCustomProps> = ({
     </button>
   )
 }
-
-export default ButtonCustom

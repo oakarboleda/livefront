@@ -1,5 +1,5 @@
 import React from 'react'
-import CardContent from '../CardContent'
+import { CardContent } from '../CardContent'
 import { render } from '@testing-library/react'
 
 describe('<CardCustom />', () => {
