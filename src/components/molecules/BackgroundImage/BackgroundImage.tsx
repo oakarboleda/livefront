@@ -1,12 +1,10 @@
 import React from 'react'
 
-import styles from './BackgroundImage.module.css'
-
 export interface backgroundImageProps {
   prop?: string
   alt?: string
 }
 
 export function BackgroundImage({ prop = 'default value' }: backgroundImageProps) {
-  return <div className={styles.BackgroundImage}>BackgroundImage {prop}</div>
+  return <div>BackgroundImage {prop}</div>
 }

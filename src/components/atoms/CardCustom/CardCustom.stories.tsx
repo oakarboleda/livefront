@@ -11,4 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof CardCustom>;
 
-export const Basic: Story = {args: {}};
+export const Basic: Story = {args: {
+  size: "small",
+  title: "weee"
+}};

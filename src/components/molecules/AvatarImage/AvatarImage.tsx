@@ -8,5 +8,5 @@ export interface avatarImageProps {
 }
 
 export function AvatarImage({ prop = 'default value' }: avatarImageProps) {
-  return <div className={styles.AvatarImage}>AvatarImage {prop}</div>
+  return <div>AvatarImage {prop}</div>
 }

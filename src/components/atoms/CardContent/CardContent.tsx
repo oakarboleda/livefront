@@ -1,18 +1,39 @@
 import React from 'react'
 
-interface cardContentProps {
+interface CardContentProps {
   children?: React.ReactNode
   className?: string
+  side?: 'front' | 'back'
+  onClick?: () => void
+  style?: React.CSSProperties
 }
 
-const CardContent: React.FC<cardContentProps> = ({ children }) => {
+export const CardContent: React.FC<CardContentProps> = ({
+  side = 'front',
+  onClick,
+  className = '',
+
+  children,
+}) => {
   return (
-    <div className="flex flex-col justify-center py-2.5 w-full bg-indigo-400 text-base">
-      <div className="flex relative flex-col px-6 pt-52 pb-4 w-full aspect-[0.975]">
-        <div className="flex relative flex-col">{children}</div>
-      </div>
+    <div
+      className={`flex flex-col justify-center py-2.5 w-full text-base ${className} bg-indigo-400`}
+    >
+      {side === 'front' ? (
+        <div className="flex flex-col items-center">
+          {/* Front side layout */}
+          <div className="flex flex-col justify-center">
+            <ul className="list-disc ml-4">{children}</ul>
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 gap-4">
+          {/* Back side layout */}
+          <div>
+            <ul className="list-disc ml-4">{children}</ul>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
-
-export default CardContent
