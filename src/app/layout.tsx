@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import './globals.scss'
 
 import React from 'react'
-import Navbar from '@/components/molecules/NavBar/NavBar'
-import Footer from '@/components/molecules/Footer/Footer'
+import { NavBar } from '@/components/molecules/NavBar/NavBar'
+import { Footer } from '@/components/molecules/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <NavBar />
         {children}
         <Footer />
       </body>
