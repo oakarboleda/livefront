@@ -1,9 +1,6 @@
-import React from 'react'
-import { expect } from 'chai'
-import Cardheader from '@/components/atoms/CardHeader/CardHeader'
+import { test, expect } from '@playwright/test'
+import { CardHeader } from '@/components/atoms/CardHeader/CardHeader'
 
-describe('Spec Cardheader', function () {
-  it('it exists', () => {
-    expect(Cardheader).to.be.ok
-  })
+test('Spec CardHeader', async ({ page }) => {
+  expect(CardHeader).toBeTruthy()
 })

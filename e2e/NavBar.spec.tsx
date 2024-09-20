@@ -1,9 +1,6 @@
-import React from 'react'
-import { expect } from 'chai'
-import Navbar from '@/components/molecules/NavBar/NavBar'
+import { test, expect } from '@playwright/test'
+import { NavBar } from '@/components/molecules/NavBar/NavBar'
 
-describe('Spec Navbar', function () {
-  it('it exists', () => {
-    expect(Navbar).to.be.ok
-  })
+test('Spec NavBar', async ({ page }) => {
+  expect(NavBar).toBeTruthy()
 })
