@@ -1,9 +1,14 @@
 import React from 'react'
-import Cardheader from './CardHeader'
+import type { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  title: 'Cardheader',
-  component: Cardheader,
+import { CardHeader } from './CardHeader'
+
+const meta: Meta<typeof CardHeader> = {
+  component: CardHeader,
 }
 
-export const Default = () => <Cardheader />
+export default meta
+
+type Story = StoryObj<typeof CardHeader>
+
+export const Basic: Story = { args: {} }
