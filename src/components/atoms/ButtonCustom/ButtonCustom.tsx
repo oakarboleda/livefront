@@ -55,7 +55,12 @@ export const ButtonCustom: React.FC<buttonCustomProps> = ({
   // Combine all styles using clsx
   const buttonClasses = clsx(baseStyles, variantStyles[variant], sizeStyles[size])
   return (
-    <button className={buttonClasses} onClick={onClick} {...props}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+      {...props}
+      aria-label={children ? undefined : 'button'}
+    >
       {children}
     </button>
   )

@@ -21,8 +21,11 @@ export const CardHeader: React.FC<cardHeaderProps> = ({
   children,
 }: cardHeaderProps): JSX.Element => {
   return (
-    <header className="px-6 py-3.5 w-full text-2xl font-bold bg-orange-100 text-neutral-800">
-      <h2>{children}</h2>
+    <header
+      className="px-6 py-3.5 w-full text-2xl font-bold bg-orange-100 text-neutral-800"
+      role="banner"
+    >
+      <h2 tabIndex={0}>{children}</h2>
     </header>
   )
 }

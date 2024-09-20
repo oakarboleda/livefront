@@ -97,6 +97,8 @@ export const SpellCard: React.FC<SpellCardProps> = ({ spell, children }) => {
           tabIndex={0}
           onClick={() => setFlipped(false)}
           onKeyDown={(e) => e.key === 'Enter' && setFlipped(false)}
+          aria-live="polite"
+          aria-label={flipped ? 'Show spell details' : 'Hide spell details'}
         >
           <CardContent side="back">
             {/* Customize layout for back side */}

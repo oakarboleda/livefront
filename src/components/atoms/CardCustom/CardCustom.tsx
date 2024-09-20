@@ -35,6 +35,7 @@ export const CardCustom: React.FC<cardCustomProps> = ({
   className,
   onClick,
   children,
+  title,
 }: cardCustomProps): JSX.Element => {
   // Map size prop to Tailwind classes
   const sizeClass =
@@ -45,7 +46,18 @@ export const CardCustom: React.FC<cardCustomProps> = ({
         : 'w-80 h-96' // default medium size (example: 20rem x 24rem)
 
   return (
-    <div className={`flex p-8 flex-col ${sizeClass} ${className}`} onClick={onClick}>
+    <div
+      className={`flex p-8 flex-col ${sizeClass} ${className}`}
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick?.()
+        }
+      }}
+      aria-label={title}
+    >
       {children}
     </div>
   )

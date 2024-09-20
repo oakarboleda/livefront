@@ -14,7 +14,9 @@ export const NavBar: React.FC = (): JSX.Element => {
         <div className="flex justify-between items-center py-4">
           {/* Left Side: Logo */}
           <div className="text-2xl font-bold text-gray-800">
-            <a href="#">RollWithIt: Your D&D companion.</a>
+            <a href="#" aria-label="RollWithIt: Your D&D companion.">
+              RollWithIt: Your D&D companion.
+            </a>
           </div>
 
           {/* Right Side: Navigation Links */}
@@ -23,6 +25,7 @@ export const NavBar: React.FC = (): JSX.Element => {
               <a
                 href="#"
                 className="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                aria-label="Home"
               >
                 Home
               </a>
@@ -31,6 +34,7 @@ export const NavBar: React.FC = (): JSX.Element => {
               <a
                 href="#"
                 className="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                aria-label="Profile"
               >
                 Profile
               </a>

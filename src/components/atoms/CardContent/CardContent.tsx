@@ -38,6 +38,9 @@ export const CardContent: React.FC<cardContentProps> = ({
   return (
     <div
       className={`flex flex-col justify-center py-2.5 w-full text-base ${className} bg-indigo-400`}
+      role="region"
+      aria-label={side === 'front' ? 'Front side of the card' : 'Back side of the card'}
+      onClick={onClick}
     >
       {side === 'front' ? (
         <div className="flex relative flex-col px-6 pt-52 pb-4 w-full aspect-[0.975] text-white">
