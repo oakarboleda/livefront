@@ -9,11 +9,11 @@ const SpellSection = lazy(() => import('@/components/organisms/SpellSection/Spel
 /**
  * Props for the Home component
  */
-export type PageProps = {
+type pageProps = {
   /** Title of the page */
-  title: string
+  title?: string
   /** Description of the page */
-  desc: string
+  desc?: string
   /** Optional children elements to be rendered inside the page */
   children?: React.ReactNode
 }
@@ -24,13 +24,13 @@ export type PageProps = {
  * This component represents the home page of the application. It sets up the page's metadata and lazy loads
  * the HeroSection and SpellSection components.
  *
- * @param {PageProps} props - The props for the component.
+ * @param {pageProps} props - The props for the component.
  * @param {string} props.title - The title of the page.
  * @param {string} props.desc - The description of the page.
  * @param {React.ReactNode} [props.children] - Optional children elements to be rendered inside the page.
  * @returns {JSX.Element} The rendered home page component.
  */
-function Home({ title, desc }: PageProps) {
+const Home: React.FC<pageProps> = ({ title, desc }) => {
   const pageTitle = `${title === 'Home | RollWithIt' ? '' : `${title} - `}`
   return (
     <>
