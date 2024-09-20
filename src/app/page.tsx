@@ -30,7 +30,7 @@ export type PageProps = {
  * @param {React.ReactNode} [props.children] - Optional children elements to be rendered inside the page.
  * @returns {JSX.Element} The rendered home page component.
  */
-export default function Home({ title, desc }: PageProps) {
+function Home({ title, desc }: PageProps) {
   const pageTitle = `${title === 'Home | RollWithIt' ? '' : `${title} - `}`
   return (
     <>
@@ -70,3 +70,4 @@ export default function Home({ title, desc }: PageProps) {
     </>
   )
 }
+export default Home
