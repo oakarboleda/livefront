@@ -6,12 +6,17 @@ import { getAllSpells } from '@/api/api'
 /**
  * Props interface for SpellSection component
  */
-export interface SpellsProps {
-  /** Optional array of spells to be passed as props */
-  spell?: Spell[]
-}
-
-export const SpellSection: React.FC<SpellsProps> = ({ spell }) => {
+export interface SpellsProps {}
+/**
+ * SpellSection component
+ *
+ * This component fetches and displays a list of spells. It handles loading, error, and empty states.
+ *
+ * @param {SpellsProps} props - The props for the component.
+ * @param {Spell[]} [props.spell] - Optional array of spells to be passed as props.
+ * @returns {JSX.Element} The rendered component.
+ */
+const SpellSection: React.FC<SpellsProps> = () => {
   const [fetchedSpells, setFetchedSpells] = useState<Spell[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
@@ -28,7 +33,7 @@ export const SpellSection: React.FC<SpellsProps> = ({ spell }) => {
 
         // Fetch spells from the API
         const fetchedSpells = await getAllSpells()
-        setFetchedSpells(fetchedSpells)
+        setFetchedSpells(fetchedSpells as Spell[])
         localStorage.setItem('spells', JSON.stringify(fetchedSpells))
         setLoading(false)
       } catch (err) {
@@ -66,3 +71,4 @@ export const SpellSection: React.FC<SpellsProps> = ({ spell }) => {
     </section>
   )
 }
+export default SpellSection

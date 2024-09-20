@@ -1,21 +1,41 @@
 import React from 'react'
 
+/**
+ * Props for the CardCustom component
+ */
 export interface cardCustomProps {
+  /** Size of the card, can be 'small', 'medium', or 'large' */
   size?: 'small' | 'medium' | 'large'
+  /** Click event handler for the card */
   onClick?: () => void
+  /** Content to be displayed inside the card */
   children?: React.ReactNode
+  /** Additional class names for styling */
   className?: string
-
+  /** Title of the card */
   title?: string
+  /** Source URL for the card image */
   imgSrc?: string
 }
 
+/**
+ * CardCustom component
+ *
+ * A customizable card component with different sizes.
+ *
+ * @param {cardCustomProps} props - The props for the component.
+ * @param {'small' | 'medium' | 'large'} [props.size='medium'] - The size of the card.
+ * @param {string} [props.className] - Additional class names for styling.
+ * @param {() => void} [props.onClick] - Click event handler for the card.
+ * @param {React.ReactNode} [props.children] - Content to be displayed inside the card.
+ * @returns {JSX.Element} The rendered card component.
+ */
 export const CardCustom: React.FC<cardCustomProps> = ({
   size = 'medium', // Default size
   className,
   onClick,
   children,
-}) => {
+}: cardCustomProps): JSX.Element => {
   // Map size prop to Tailwind classes
   const sizeClass =
     size === 'small'

@@ -1,6 +1,13 @@
 // components/Footer.tsx
 import React from 'react'
 
+/**
+ * Footer component
+ *
+ * A footer component that includes a logo or brand, navigation links, and copyright text.
+ *
+ * @returns {JSX.Element} The rendered footer component.
+ */
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
@@ -8,7 +15,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Left Side: Logo or Brand */}
           <div className="text-lg font-bold mb-4 md:mb-0">
-            <a href="#">MyWebsite</a>
+            <a href="#">RollWithIt</a>
           </div>
 
           {/* Center: Navigation Links */}
@@ -17,19 +24,13 @@ export const Footer: React.FC = () => {
               Home
             </a>
             <a href="#" className="text-gray-300 hover:text-white">
-              About
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white">
-              Services
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white">
-              Contact
+              Profile
             </a>
           </div>
 
           {/* Right Side: Copyright Text */}
           <div className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} MyWebsite. All rights reserved.
+            &copy; {new Date().getFullYear()} RollWithIt. All rights reserved.
           </div>
         </div>
       </div>
