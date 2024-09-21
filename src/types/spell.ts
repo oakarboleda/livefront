@@ -25,12 +25,6 @@ export type Spell = {
     name: string
     url: string
   }
-  subclasses: {
-    index: string
-    name: string
-    url: string
-    level: number
-  }
   image?: string // Add this line
   desc: string[]
 }
