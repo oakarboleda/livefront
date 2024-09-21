@@ -36,11 +36,12 @@ export const ButtonCustom: React.FC<buttonCustomProps> = ({
 }: buttonCustomProps): JSX.Element => {
   // Define the base styles
   const baseStyles =
-    'inline-flex items-center justify-center border border-transparent rounded-md shadow-sm font-medium focus:outline-none'
+    'inline-flex full flex items-center justify-center px-8 py-3 text-base leading-6 font-medium rounded-md transition duration-300 ease-in-out transform hover:scale-110'
 
   // Define the variant styles
   const variantStyles = {
-    primary: 'bg-blue-900 text-white hover:bg-blue-700',
+    primary:
+      'text-purple-700 dark:text-purple-700 bg-purple-100 hover:bg-purple-50 hover:text-purple-600 focus:ring ring-offset-2 ring-purple-100 focus:outline-none',
     secondary: 'bg-gray-100 text-gray-800 hover:bg-gray-200',
     danger: 'bg-red-600 text-white hover:bg-red-700',
   }

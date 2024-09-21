@@ -67,12 +67,12 @@ const SpellSection: React.FC<SpellsProps> = () => {
   }
 
   return (
-    <section className="flex flex-col p-15 w-full h-full" aria-labelledby="spells-heading">
+    <section className="flex flex-col p-15 pb-8 w-full h-full" aria-labelledby="spells-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="spells-heading" className="text-3xl font-bold text-center mb-8 text-gray-800">
           Spells
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8">
           {fetchedSpells.map((spell, i) => (
             <SpellCard key={i} spell={spell} />
           ))}

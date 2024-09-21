@@ -22,10 +22,10 @@ export const Footer: React.FC = () => {
 
           {/* Center: Navigation Links */}
           <nav className="space-x-6 mb-4 md:mb-0" aria-label="Footer Navigation">
-            <a href="#" className="text-gray-300 hover:text-white" aria-label="Home">
+            <a href="/#" className="text-gray-300 hover:text-white" aria-label="Home">
               Home
             </a>
-            <a href="#" className="text-gray-300 hover:text-white" aria-label="Profile">
+            <a href="/#" className="text-gray-300 hover:text-white" aria-label="Profile">
               Profile
             </a>
           </nav>
