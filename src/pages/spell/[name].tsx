@@ -86,7 +86,7 @@ const SpellDetails: React.FC = () => {
             {spell.material !== undefined && (
               <SpellDetailItem title="Material" content={spell.material} />
             )}
-            {spell.classes && spell.classes.length > 0 && (
+            {spell.classes && Array.isArray(spell.classes) && spell.classes.length > 0 && (
               <SpellDetailItem
                 title="Classes"
                 content={
