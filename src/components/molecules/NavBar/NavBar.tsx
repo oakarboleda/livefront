@@ -1,31 +1,52 @@
 import React from 'react'
 
-export const NavBar: React.FC = () => {
+/**
+ * NavBar component
+ *
+ * A navigation bar component that includes a logo, navigation links, and a mobile menu button.
+ *
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
+export const NavBar: React.FC = (): JSX.Element => {
   return (
-    <nav className="sticky top-0 bg-white shadow-md z-50">
+    <nav className="sticky top-0 bg-white shadow-md z-50" aria-label="Main Navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Left Side: Logo */}
           <div className="text-2xl font-bold text-gray-800">
-            <a href="#">MyWebsite</a>
+            <a href="#" aria-label="RollWithIt: Your D&D companion.">
+              RollWithIt: Your D&D companion.
+            </a>
           </div>
 
           {/* Right Side: Navigation Links */}
-          <div className="hidden md:flex space-x-8">
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Home
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              About
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Contact
-            </a>
-          </div>
+          <ul className="hidden md:flex space-x-8">
+            <li>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                aria-label="Home"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                aria-label="Profile"
+              >
+                Profile
+              </a>
+            </li>
+          </ul>
 
           {/* Mobile Menu (optional) */}
           <div className="md:hidden">
-            <button className="text-gray-600 focus:outline-none focus:text-gray-900">
+            <button
+              className="text-gray-600 focus:outline-none focus:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              aria-label="Open mobile menu"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
