@@ -5,7 +5,7 @@ import React from 'react'
  */
 export interface headingCustomProps {
   /** An optional prop to customize the heading text */
-  prop?: string
+  title?: string
 }
 
 /**
@@ -17,6 +17,6 @@ export interface headingCustomProps {
  * @param {string} [props.prop='default value'] - An optional prop to customize the heading text.
  * @returns {JSX.Element} The rendered heading component.
  */
-export function HeadingCustom({ prop = 'default value' }: headingCustomProps): JSX.Element {
-  return <div className="">HeadingCustom {prop}</div>
+export function HeadingCustom({ title }: headingCustomProps): JSX.Element {
+  return <div className="">HeadingCustom {title}</div>
 }

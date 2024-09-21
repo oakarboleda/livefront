@@ -16,6 +16,5 @@ const Template: StoryFn<headingCustomProps> = (args) => <HeadingCustom {...args}
 
 export const Primary = Template.bind({})
 Primary.args = {
-  prop: 'default value',
   title: 'Heading Title',
 }
