@@ -1,14 +1,20 @@
-import React from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import React from 'react'
+import { Meta, StoryFn } from '@storybook/react'
+import { HeadingCustom, headingCustomProps } from './HeadingCustom'
 
-import {HeadingCustom} from './HeadingCustom';
-
-const meta: Meta<typeof HeadingCustom> = {
+export default {
+  title: 'Atoms/HeadingCustom',
   component: HeadingCustom,
-};
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+  args: {},
+} as Meta<typeof HeadingCustom>
 
-export default meta;
+const Template: StoryFn<headingCustomProps> = (args) => <HeadingCustom {...args} />
 
-type Story = StoryObj<typeof HeadingCustom>;
-
-export const Basic: Story = {args: {}};
+export const Primary = Template.bind({})
+Primary.args = {
+  title: 'Heading Title',
+}

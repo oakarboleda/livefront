@@ -100,9 +100,10 @@ export const SpellCard: React.FC<SpellCardProps> = ({ spell, children }) => {
           aria-live="polite"
           aria-label={flipped ? 'Show spell details' : 'Hide spell details'}
         >
+          <CardHeader>Information</CardHeader>
           <CardContent side="back">
             {/* Customize layout for back side */}
-            <div className="flex flex-col p-4">
+            <div className="row-auto">
               <p>
                 <strong>Casting Time:</strong> {spell?.casting_time || 'N/A'}
               </p>
