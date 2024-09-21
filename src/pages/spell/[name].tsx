@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Spell } from '@/types/spell'
 import { getSpellByNameAndIndex } from '@/api/api'
-import Image from 'next/image'
+import RootLayout from '@/app/layout'
+import { SpellDetailItem } from '@/components/atoms/SpellDetailItem/SpellDetailItem'
 
 const SpellDetails: React.FC = () => {
   const router = useRouter()
