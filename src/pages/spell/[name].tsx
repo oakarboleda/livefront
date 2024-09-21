@@ -9,10 +9,11 @@ const SpellDetails: React.FC = () => {
   const { name } = router.query
   const [spell, setSpell] = useState<Spell | null>(null)
 
+  // Fetch spell data when the name query parameter changes
   useEffect(() => {
     if (name) {
       getSpellByNameAndIndex(name as string).then((data) => {
-        setSpell(data)
+        return setSpell(data as Spell)
       })
     }
   }, [name])
