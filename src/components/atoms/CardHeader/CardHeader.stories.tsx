@@ -1,14 +1,18 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
 
 import { CardHeader } from './CardHeader'
 
-const meta: Meta<typeof CardHeader> = {
+const meta = {
+  title: 'Atoms/CardHeader',
   component: CardHeader,
-}
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+  parameters: {
+    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+    layout: 'fullscreen',
+  },
+  args: {},
+} satisfies Meta<typeof CardHeader>
 
 export default meta
-
-type Story = StoryObj<typeof CardHeader>
-
-export const Basic: Story = { args: {} }

@@ -1,14 +1,26 @@
-import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
-
+import { Meta, StoryFn } from '@storybook/react'
 import SpellSection from './SpellSection'
+import React from 'react'
 
-const meta: Meta<typeof SpellSection> = {
+export default {
+  title: 'Organisms/SpellSection',
   component: SpellSection,
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+    layout: 'centered full',
+  },
+  args: {},
+} satisfies Meta<typeof SpellSection>
+
+const Template: StoryFn<typeof SpellSection> = (args) => <SpellSection {...args} />
+
+export const Primary = Template.bind({})
+Primary.args = {
+  // This is the default prop value for the component
+  prop: 'default value',
 }
-
-export default meta
-
-type Story = StoryObj<typeof SpellSection>
-
-export const Basic: Story = { args: {} }

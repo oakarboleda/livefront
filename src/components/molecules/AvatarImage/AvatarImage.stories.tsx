@@ -1,14 +1,23 @@
-import React from 'react';
-import type {Meta, StoryObj} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react'
+import { AvatarImage } from './AvatarImage'
+import React from 'react'
 
-import {AvatarImage} from './AvatarImage';
-
-const meta: Meta<typeof AvatarImage> = {
+export default {
+  title: 'Molecules/ImageCustom',
   component: AvatarImage,
-};
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+  parameters: {
+    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+    layout: 'centered',
+  },
+  args: {},
+} satisfies Meta<typeof AvatarImage>
 
-export default meta;
+const Template: StoryFn<typeof AvatarImage> = (args) => <AvatarImage {...args} />
 
-type Story = StoryObj<typeof AvatarImage>;
-
-export const Basic: Story = {args: {}};
+export const Primary = Template.bind({})
+Primary.args = {
+  // This is the default prop value for the component
+  prop: 'default value',
+}

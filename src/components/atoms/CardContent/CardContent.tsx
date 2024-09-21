@@ -50,10 +50,12 @@ export const CardContent: React.FC<cardContentProps> = ({
           </div>
         </div>
       ) : (
-        <div className="flex flex-col">
-          {/* Back side layout */}
+        <div className="flex relative flex-col px-4 pt-15 py-2 w-full aspect-[0.975] text-white">
           <div className="flex flex-col">
-            <ul className="list-disc ml-4">{children}</ul>
+            {/* Back side layout */}
+            <div className="flex flex-col">
+              <ul className="list-disc ml-4">{children}</ul>
+            </div>
           </div>
         </div>
       )}
