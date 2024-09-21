@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImageCustom /> matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    ImageCustom default value
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ImageCustom /> matches snapshot with custom prop 1`] = `
+<DocumentFragment>
+  <div>
+    ImageCustom custom value
+  </div>
+</DocumentFragment>
+`;

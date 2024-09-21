@@ -2,20 +2,14 @@ import React from 'react'
 import { CardContent } from '../CardContent'
 import { render } from '@testing-library/react'
 
-describe('<CardCustom />', () => {
-  const spell = {
-    index: '1',
-    name: 'name',
-    level: 1,
-    school: {
-      name: 'school',
-    },
-    casting_time: 'casting_time',
-    range: 'range',
-    components: ['components'],
-    duration: 'duration',
-  }
-  it('renders without crashing', async () => {
-    render(<CardContent spell={spell} />)
+describe('<CardContent />', () => {
+  it('renders front side content', () => {
+    const { getByText } = render(<CardContent side="front">Front Content</CardContent>)
+    expect(getByText('Front Content')).toBeInTheDocument()
+  })
+
+  it('renders back side content', () => {
+    const { getByText } = render(<CardContent side="back">Back Content</CardContent>)
+    expect(getByText('Back Content')).toBeInTheDocument()
   })
 })
