@@ -11,7 +11,7 @@ import Image from 'next/image'
 const HeroSection: React.FC = () => {
   return (
     <section
-      className="flex flex-col-reverse md:flex-row items-center justify-between p-8 min-h-screen"
+      className="flex flex-col-reverse md:flex-row items-center justify-between p-8"
       aria-labelledby="hero-heading"
     >
       {/* Left Column: Text Content */}
