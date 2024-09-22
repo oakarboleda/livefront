@@ -47,7 +47,7 @@ export const CardCustom: React.FC<cardCustomProps> = ({
 
   return (
     <div
-      className={`flex justify-center items-center gap-8 flex-col-1 ${sizeClass} ${className}`}
+      className={`flex flex-col sm:flex-col m-2 sm:m-4 md:m-6 ${sizeClass} ${className}`}
       onClick={onClick}
       role="button"
       tabIndex={0}
