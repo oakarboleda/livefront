@@ -28,10 +28,10 @@ const SpellDetails: React.FC = () => {
     <RootLayout>
       <div className="container h-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto px-5 mt-16 py-5">
-          <div className="text-center mb-10">
+          <div className="text-center text-xl mb-10">
             <h2 className="font-semibold text-3xl">Spell Details</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-5 justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-5 justify-center">
             {/* Casting Time & Range */}
 
             {spell.casting_time && (
@@ -47,13 +47,13 @@ const SpellDetails: React.FC = () => {
 
             {/* Description */}
             {spell.desc && spell.desc.length > 0 && (
-              <div className="col-span-2 py-5">
+              <div className="col-span-2">
                 <SpellDetailItem title="Description" content={spell.desc} />
               </div>
             )}
 
             {spell.higher_level && spell.higher_level.length > 0 && (
-              <div className="col-span-2 py-5">
+              <div className="col-span-2">
                 <SpellDetailItem title="Higher Level" content={spell.higher_level} />
               </div>
             )}
