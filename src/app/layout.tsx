@@ -15,7 +15,7 @@ export default function RootLayout({
       <body>
         <NavBar />
         {children}
-        <Analytics mode={'production'} />;
+        <Analytics mode={'production'} />
         <SpeedInsights />
         <Footer />
       </body>
