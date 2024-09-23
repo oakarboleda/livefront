@@ -26,7 +26,7 @@ const SpellDetails: React.FC = () => {
 
   return (
     <RootLayout>
-      <div className="container h-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container h-screen mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto px-5 mt-16 py-5">
           <div className="text-center text-xl mb-10">
             <h2 className="font-semibold text-3xl">Spell Details</h2>
