@@ -13,11 +13,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+      <main>
         <NavBar />
         {children}
         <Analytics mode={'production'} />
         <SpeedInsights />
         <Footer />
+      </main>
       </body>
     </html>
   )
