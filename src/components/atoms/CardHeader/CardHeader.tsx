@@ -3,9 +3,10 @@ import React from 'react'
 /**
  * Props for the CardHeader component
  */
-export interface cardHeaderProps {
+export interface CardHeaderProps {
   /** Optional children elements to be rendered inside the card header */
   children?: React.ReactNode
+  className?: string
 }
 
 /**
@@ -13,16 +14,17 @@ export interface cardHeaderProps {
  *
  * A component that renders a header for a card with optional children elements.
  *
- * @param {cardHeaderProps} props - The props for the component.
+ * @param {CardHeaderProps} props - The props for the component.
  * @param {React.ReactNode} [props.children] - Optional children elements to be rendered inside the card header.
  * @returns {JSX.Element} The rendered card header component.
  */
-export const CardHeader: React.FC<cardHeaderProps> = ({
+export const CardHeader: React.FC<CardHeaderProps> = ({
   children,
-}: cardHeaderProps): JSX.Element => {
+  className,
+}: CardHeaderProps): JSX.Element => {
   return (
     <header
-      className="px-6 py-3.5 w-full text-2xl font-bold bg-orange-100 text-neutral-800"
+      className="h-12 px-6 py-3.5 w-full text-base sm:text-sm md:text-base lg:text-lg bg-orange-100 text-neutral-800 flex items-center justify-center overflow-hidden truncate"
       role="banner"
     >
       <h2 tabIndex={0}>{children}</h2>

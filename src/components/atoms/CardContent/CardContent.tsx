@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * Props for the CardContent component
  */
-export interface cardContentProps {
+export interface CardContentProps {
   /** Optional children elements to be rendered inside the card */
   children?: React.ReactNode
   /** Additional class names for styling */
@@ -29,32 +29,32 @@ export interface cardContentProps {
  * @param {React.CSSProperties} [props.style] - Inline styles for the card.
  * @returns {JSX.Element} The rendered card content component.
  */
-export const CardContent: React.FC<cardContentProps> = ({
+export const CardContent: React.FC<CardContentProps> = ({
   side = 'front',
   onClick,
   className = '',
   children,
-}: cardContentProps): JSX.Element => {
+}: CardContentProps): JSX.Element => {
   return (
     <div
-      className={`flex flex-col justify-center py-2.5 w-full text-base ${className} bg-indigo-400`}
+      className={`flex flex-col justify-center w-full text-base ${className} bg-indigo-400`}
       role="region"
       aria-label={side === 'front' ? 'Front side of the card' : 'Back side of the card'}
       onClick={onClick}
     >
       {side === 'front' ? (
-        <div className="flex relative flex-col px-6 pt-52 pb-4 w-full aspect-[0.975] text-white">
+        <div className="flex relative flex-col px-6 pt-52 pb-4 w-full aspect-[0.975]  text-white">
           {/* Front side layout */}
           <div className="flex relative flex-col">
-            <ul className="list-disc ml-4">{children}</ul>
+            <ul className="list-disc">{children}</ul>
           </div>
         </div>
       ) : (
-        <div className="flex relative flex-col px-4 pt-15 py-2 w-full aspect-[0.975] text-white">
+        <div className="flex relative flex-col px-4 pt-15 w-full aspect-[0.975]  text-white">
           <div className="flex flex-col">
             {/* Back side layout */}
             <div className="flex flex-col">
-              <ul className="list-disc ml-4">{children}</ul>
+              <ul className="list-disc">{children}</ul>
             </div>
           </div>
         </div>

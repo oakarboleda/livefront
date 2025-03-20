@@ -17,8 +17,8 @@ export const SpellDetailItem: React.FC<SpellDetailItemProps> = ({ title, content
       />
 
       <div className="px-3.5 flex flex-col">
-        <h3 className="font-semibold lg:text-xl sm:text-sm">{title}:</h3>
-        <p className="mt-1 text-gray-400">{details}</p>
+        <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">{title}:</h3>
+        <p className="mt-1 text-xs sm:text-sm md:text-base lg:text-lg text-gray-400">{details}</p>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * Props for the CardCustom component
  */
-export interface cardCustomProps {
+export interface CardCustomProps {
   /** Size of the card, can be 'small', 'medium', or 'large' */
   size?: 'small' | 'medium' | 'large'
   /** Click event handler for the card */
@@ -23,20 +23,20 @@ export interface cardCustomProps {
  *
  * A customizable card component with different sizes.
  *
- * @param {cardCustomProps} props - The props for the component.
+ * @param {CardCustomProps} props - The props for the component.
  * @param {'small' | 'medium' | 'large'} [props.size='medium'] - The size of the card.
  * @param {string} [props.className] - Additional class names for styling.
  * @param {() => void} [props.onClick] - Click event handler for the card.
  * @param {React.ReactNode} [props.children] - Content to be displayed inside the card.
  * @returns {JSX.Element} The rendered card component.
  */
-export const CardCustom: React.FC<cardCustomProps> = ({
+export const CardCustom: React.FC<CardCustomProps> = ({
   size = 'medium', // Default size
   className,
   onClick,
   children,
   title,
-}: cardCustomProps): JSX.Element => {
+}: CardCustomProps): JSX.Element => {
   // Map size prop to Tailwind classes
   const sizeClass =
     size === 'small'
@@ -49,7 +49,6 @@ export const CardCustom: React.FC<cardCustomProps> = ({
     <div
       className={`flex flex-col sm:flex-col m-2 sm:m-4 md:m-6 ${sizeClass} ${className}`}
       onClick={onClick}
-      role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {

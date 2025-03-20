@@ -81,11 +81,11 @@ export const SpellCard: React.FC<SpellCardProps> = ({ spell, children }) => {
           aria-live="polite"
           aria-label={flipped ? 'Hide spell details' : 'Show spell details'}
         >
-          <CardHeader>{spell.name}</CardHeader>
+          <CardHeader className="h-12 flex items-center justify-center overflow-hidden truncate">{spell.name}</CardHeader>
           <CardContent side="front">
             {/* Customize layout for front side */}
-            <p>{spell.level > 0 ? `Level ${spell.level}` : 'Cantrip'}</p>
-            <p>{spell.school.name}</p>
+            <p className="text-base	 sm:text-sm md:text-base lg:text-lg">{spell.level > 0 ? `Level ${spell.level}` : 'Cantrip'}</p>
+            <p className="text-base sm:text-sm md:text-base lg:text-lg">{spell.school.name}</p>
           </CardContent>
         </div>
 
@@ -104,20 +104,23 @@ export const SpellCard: React.FC<SpellCardProps> = ({ spell, children }) => {
           <CardContent side="back">
             {/* Customize layout for back side */}
             <div className="row-auto">
-              <p>
+              <p className="text-base sm:text-sm md:text-base lg:text-lg">
                 <strong>Casting Time:</strong> {spell?.casting_time || 'N/A'}
               </p>
-              <p>
-                <strong>Range:</strong> {spell?.range || 'N/A'}
+              <p className="text-base sm:text-sm md:text-base lg:text-lg">
+
+              <strong>Range:</strong> {spell?.range || 'N/A'}
               </p>
-              <p>
-                <strong>Components:</strong> {spell?.components.join(', ') || 'N/A'}
+              <p className="text-base sm:text-sm md:text-base lg:text-lg">
+
+              <strong>Components:</strong> {spell?.components.join(', ') || 'N/A'}
               </p>
-              <p>
-                <strong>Duration:</strong> {spell?.duration || 'N/A'}
+              <p className="text-base sm:text-sm md:text-base lg:text-lg">
+
+              <strong>Duration:</strong> {spell?.duration || 'N/A'}
               </p>
 
-              <div className="mt-4">
+              <div className="mt-4 flex">
                 <ButtonCustom variant="primary" onClick={handleOnClick}>
                   Learn more
                 </ButtonCustom>
