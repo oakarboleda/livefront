@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { CardContent, cardContentProps } from './CardContent'
+import { CardContent, CardContentProps } from './CardContent'
 
 export default {
   title: 'Atoms/CardContent',
@@ -19,7 +19,7 @@ export default {
   },
 } as Meta
 
-const Template: StoryFn<cardContentProps> = (args) => <CardContent {...args} />
+const Template: StoryFn<CardContentProps> = (args) => <CardContent {...args} />
 
 export const FrontSide = Template.bind({})
 FrontSide.args = {
