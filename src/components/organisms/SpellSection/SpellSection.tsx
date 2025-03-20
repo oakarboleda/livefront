@@ -72,7 +72,7 @@ const SpellSection: React.FC<SpellsProps> = () => {
         <h2 id="spells-heading" className="text-3xl font-bold text-center mb-8 text-gray-800">
           Spells
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {fetchedSpells.map((spell, i) => (
             <SpellCard key={i} spell={spell} />
           ))}
