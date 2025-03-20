@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.dnd5eapi.co'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 // Predefined list of specific spells from D&D 5e API.
 const specificSpellIndexes = [
@@ -25,15 +25,14 @@ const specificSpellIndexes = [
  */
 export async function getAllSpells(): Promise<object[]> {
   return Promise.all(
-    specificSpellIndexes.map((index) => {
+    specificSpellIndexes.map(async (index) => {
       const url = `${BASE_URL}/api/spells/${index}`
       console.log(`Fetching URL: ${url}`)
-      return fetch(url).then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch ${url}: ${response.statusText}`)
-        }
-        return response.json()
-      })
+      const response = await fetch(url)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${url}: ${response.statusText}`)
+      }
+      return await response.json()
     }),
   )
 }
@@ -55,6 +54,5 @@ export async function getSpellByNameAndIndex(index: string): Promise<object> {
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.statusText}`)
   }
-  const spell = await response.json()
-  return spell
+  return await response.json()
 }
